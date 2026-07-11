@@ -1,7 +1,10 @@
 import express from 'express'
 import {engine} from 'express-handlebars'
 import session from 'express-session'
-
+import dotenv from 'dotenv'
+dotenv.config()
+import './db.js'
+import UserRoutes from './routes/UserRoutes.js'
 
 const app = express()
 
@@ -30,7 +33,12 @@ app.get("/about", (req,res) =>{
     })
 })
 
-const port = 3006
+// TODO -> app.get about
+// title, username
+
+
+app.use("/user", UserRoutes)
+const port = process.env.PORT
 app.listen(port, ()=>{
     console.log(`Server running on localhost:${port}`)
 })

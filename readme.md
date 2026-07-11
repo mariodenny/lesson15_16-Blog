@@ -20,3 +20,8 @@ git add .
 git commit -m "your message"
 git push origin main
 ```
+4. Standar commit message
+```shell
+[FTR] : fitur baru
+[BUG] : handle bug
+```
